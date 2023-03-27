@@ -6,13 +6,10 @@ var todayhr;
 
 const timecheck = setInterval(function () {
 $('#currentDay').text(dayjs().format('dddd, MMMM D YYYY, h:mm:ss a'));
-// if(dayjs().hour() == )
 }, 1000);
  console.log(todayhr);
 
 $(function () {
-
-
   for (let i = 0; i < slots.length; i++) {
     var slot = $(slots[i]);
     console.log(slot.attr("data-time"));
@@ -25,6 +22,9 @@ $(function () {
       slot.addClass("future");
     }else if (realhr == slothr) {
       slot.addClass("present");
+    }
+    if (localStorage.getItem(slothr) !== null) {
+      slot.children(".description").val(localStorage.getItem(slothr));
     }
     
   }
@@ -47,4 +47,10 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+});
+
+$(".saveBtn").on("click", function () {
+var text = $(this).siblings(".description").val();
+var time = $(this).parent().attr("data-time");
+localStorage.setItem(time, text);
 });
