@@ -9,7 +9,7 @@ This project is a workday scheduler. You can set tasks throughtout the day and s
 
 ## Installation
 
-https://luis6400.github.io/3CBchallengeJS/
+https://luis6400.github.io/5CBChallenge/
 
 ## Usage
 
