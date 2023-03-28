@@ -12,8 +12,8 @@ $('#currentDay').text(dayjs().format('dddd, MMMM D YYYY, h:mm:ss a'));
 $(function () {
   for (let i = 0; i < slots.length; i++) {
     var slot = $(slots[i]);
-    console.log(slot.attr("data-time"));
-    console.log(dayjs().format('H'));
+    // console.log(slot.attr("data-time"));
+    // console.log(dayjs().format('H'));
     var slothr = parseInt(slot.attr("data-time"));
     var realhr = parseInt(dayjs().format('H'));
     if (realhr > slothr) {
@@ -54,3 +54,5 @@ var text = $(this).siblings(".description").val();
 var time = $(this).parent().attr("data-time");
 localStorage.setItem(time, text);
 });
+
+// localStorage.setItem("key", value);
